@@ -382,6 +382,11 @@ class PushClass {
 			throw new Error('Push.send: option "text" not a string');
 		}
 
+		// remove the timestamp prefix if exists
+		if (/^\d*\|/.test(notification.title)) {
+			notification.title = notification.title.substring(notification.title.indexOf('|') + 1)
+		}
+
 		logger.debug(`send message "${notification.title}" to userId`, notification.userId);
 
 		const query = {
