@@ -383,7 +383,7 @@ class PushClass {
 		}
 
 		// remove the timestamp prefix if exists
-		if (/^[\w-]*\|/.test(notification.title)) {
+		if (/^#?[\w-]*\|/.test(notification.title)) {
 			notification.title = notification.title.substring(notification.title.indexOf('|') + 1);
 		}
 
