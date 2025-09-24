@@ -383,8 +383,8 @@ class PushClass {
 		}
 
 		// remove the timestamp prefix if exists
-		if (/^\d*\|/.test(notification.title)) {
-			notification.title = notification.title.substring(notification.title.indexOf('|') + 1)
+		if (/^[\w-]*\|/.test(notification.title)) {
+			notification.title = notification.title.substring(notification.title.indexOf('|') + 1);
 		}
 
 		logger.debug(`send message "${notification.title}" to userId`, notification.userId);
